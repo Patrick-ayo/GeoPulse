@@ -1,0 +1,80 @@
+[
+  {
+    "event_id": "evt_20260205_nato",
+    "headline": "NATO announces emergency summit amid Baltic tensions",
+    "predicted_direction": "BEARISH",
+    "predicted_ticker": "SPY",
+    "predicted_confidence": 0.78,
+    "horizon": "24h",
+    "price_at_event": 485.20,
+    "price_at_validation": 481.35,
+    "actual_change_percent": -0.79,
+    "status": "CORRECT",
+    "validated_at": "2026-02-06T11:00:00Z"
+  },
+  {
+    "event_id": "evt_20260204_oil",
+    "headline": "OPEC+ extends production cuts through Q2",
+    "predicted_direction": "BULLISH",
+    "predicted_ticker": "XOM",
+    "predicted_confidence": 0.85,
+    "horizon": "6h",
+    "price_at_event": 108.50,
+    "price_at_validation": 111.20,
+    "actual_change_percent": 2.49,
+    "status": "CORRECT",
+    "validated_at": "2026-02-04T18:00:00Z"
+  },
+  {
+    "event_id": "evt_20260203_tech",
+    "headline": "Apple reports record Q4 iPhone sales in China",
+    "predicted_direction": "BULLISH",
+    "predicted_ticker": "AAPL",
+    "predicted_confidence": 0.72,
+    "horizon": "24h",
+    "price_at_event": 192.30,
+    "price_at_validation": 195.80,
+    "actual_change_percent": 1.82,
+    "status": "CORRECT",
+    "validated_at": "2026-02-04T16:00:00Z"
+  },
+  {
+    "event_id": "evt_20260202_crypto",
+    "headline": "Tether faces regulatory scrutiny in Singapore",
+    "predicted_direction": "BEARISH",
+    "predicted_ticker": "BTC",
+    "predicted_confidence": 0.55,
+    "horizon": "1h",
+    "price_at_event": 52100,
+    "price_at_validation": 52350,
+    "actual_change_percent": 0.48,
+    "status": "INCORRECT",
+    "validated_at": "2026-02-02T15:00:00Z"
+  },
+  {
+    "event_id": "evt_20260201_fed",
+    "headline": "Fed minutes reveal hawkish stance on inflation",
+    "predicted_direction": "BEARISH",
+    "predicted_ticker": "QQQ",
+    "predicted_confidence": 0.82,
+    "horizon": "6h",
+    "price_at_event": 425.00,
+    "price_at_validation": 420.50,
+    "actual_change_percent": -1.06,
+    "status": "CORRECT",
+    "validated_at": "2026-02-01T20:00:00Z"
+  },
+  {
+    "event_id": "evt_20260131_eu",
+    "headline": "ECB holds rates steady, signals patience",
+    "predicted_direction": "BULLISH",
+    "predicted_ticker": "EUR/USD",
+    "predicted_confidence": 0.60,
+    "horizon": "24h",
+    "price_at_event": 1.0820,
+    "price_at_validation": 1.0790,
+    "actual_change_percent": -0.28,
+    "status": "INCORRECT",
+    "validated_at": "2026-02-01T14:00:00Z"
+  }
+]
