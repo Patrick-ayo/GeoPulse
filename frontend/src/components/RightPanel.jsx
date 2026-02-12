@@ -19,7 +19,18 @@ import {
   Activity,
   BarChart3,
   PieChart,
-  Calendar
+  Calendar,
+  X,
+  ArrowUpRight,
+  Globe,
+  Zap,
+  TrendingDown,
+  AlertTriangle,
+  CheckCircle,
+  Eye,
+  Share2,
+  Bookmark,
+  MoreHorizontal
 } from 'lucide-react';
 
 const tabs = [
@@ -54,6 +65,625 @@ const mockPredictions = [
   { asset: 'BTC', prediction: 'BULLISH', confidence: 78, status: 'ACTIVE', timeLeft: '1d 3h' },
   { asset: 'SPY', prediction: 'BULLISH', confidence: 88, status: 'VALIDATED', accuracy: 'CORRECT' },
 ];
+
+// Extended mock data for fullscreen views
+const extendedTrendingTopics = [
+  { label: 'AI Regulation', events: 12, change: '+24%', category: 'Technology', severity: 'HIGH', regions: ['US', 'EU'], description: 'New legislative proposals for AI governance' },
+  { label: 'Oil Prices', events: 8, change: '+18%', category: 'Energy', severity: 'HIGH', regions: ['ME', 'US'], description: 'OPEC+ production cuts affecting global markets' },
+  { label: 'Fed Policy', events: 15, change: '+8%', category: 'Finance', severity: 'CRITICAL', regions: ['US'], description: 'Federal Reserve interest rate decisions' },
+  { label: 'Crypto ETFs', events: 6, change: '+45%', category: 'Crypto', severity: 'MEDIUM', regions: ['US', 'EU'], description: 'Bitcoin ETF approval speculation' },
+  { label: 'China Stimulus', events: 4, change: '+12%', category: 'Economy', severity: 'HIGH', regions: ['CN', 'APAC'], description: 'Economic stimulus measures announced' },
+  { label: 'Climate Summit', events: 9, change: '+15%', category: 'Environment', severity: 'MEDIUM', regions: ['GLOBAL'], description: 'COP30 negotiations and commitments' },
+  { label: 'Tech Layoffs', events: 7, change: '-5%', category: 'Employment', severity: 'MEDIUM', regions: ['US', 'EU'], description: 'Continued workforce reductions in tech sector' },
+  { label: 'Bank Earnings', events: 11, change: '+22%', category: 'Finance', severity: 'HIGH', regions: ['US', 'EU'], description: 'Q4 earnings reports from major banks' },
+];
+
+const extendedDiscoverTopics = [
+  { title: 'European Central Bank Policy', description: 'Based on your interest in monetary policy', match: 92, followers: '12.4K', events24h: 8 },
+  { title: 'Renewable Energy Sector', description: 'High activity detected', match: 87, followers: '45.2K', events24h: 15 },
+  { title: 'China Trade Relations', description: 'Trending in your region', match: 78, followers: '8.9K', events24h: 6 },
+  { title: 'Semiconductor Industry', description: 'Related to your watchlist', match: 85, followers: '32.1K', events24h: 12 },
+  { title: 'Healthcare Innovation', description: 'Emerging sector activity', match: 72, followers: '18.7K', events24h: 9 },
+  { title: 'Defense Spending', description: 'Geopolitical relevance', match: 68, followers: '6.3K', events24h: 4 },
+];
+
+const extendedInterests = [
+  { tag: 'Energy', weight: 85, notifications: true, events: 24, predictions: 8, accuracy: 82 },
+  { tag: 'Technology', weight: 72, notifications: true, events: 45, predictions: 12, accuracy: 76 },
+  { tag: 'Federal Reserve', weight: 68, notifications: false, events: 18, predictions: 5, accuracy: 90 },
+  { tag: 'Cryptocurrency', weight: 45, notifications: true, events: 32, predictions: 15, accuracy: 65 },
+  { tag: 'Trade Policy', weight: 32, notifications: false, events: 12, predictions: 3, accuracy: 78 },
+  { tag: 'Commodities', weight: 58, notifications: true, events: 28, predictions: 7, accuracy: 71 },
+  { tag: 'Healthcare', weight: 25, notifications: false, events: 15, predictions: 2, accuracy: 80 },
+];
+
+const extendedPredictions = [
+  { asset: 'XOM', prediction: 'BULLISH', confidence: 92, status: 'ACTIVE', timeLeft: '2h 15m', entry: '$104.50', target: '$112.00', stopLoss: '$101.00', pnl: '+3.2%' },
+  { asset: 'MSFT', prediction: 'BEARISH', confidence: 65, status: 'PENDING', timeLeft: '8h 45m', entry: '$378.00', target: '$365.00', stopLoss: '$385.00', pnl: '0%' },
+  { asset: 'BTC', prediction: 'BULLISH', confidence: 78, status: 'ACTIVE', timeLeft: '1d 3h', entry: '$42,500', target: '$48,000', stopLoss: '$40,000', pnl: '+5.8%' },
+  { asset: 'SPY', prediction: 'BULLISH', confidence: 88, status: 'VALIDATED', accuracy: 'CORRECT', entry: '$475.00', target: '$490.00', pnl: '+3.7%' },
+  { asset: 'NVDA', prediction: 'BULLISH', confidence: 85, status: 'ACTIVE', timeLeft: '4h 30m', entry: '$485.00', target: '$520.00', stopLoss: '$470.00', pnl: '+2.1%' },
+  { asset: 'AAPL', prediction: 'BEARISH', confidence: 72, status: 'VALIDATED', accuracy: 'INCORRECT', entry: '$188.00', target: '$175.00', pnl: '-1.5%' },
+];
+
+const dashboardStats = {
+  totalEvents: 156,
+  predictionsAccuracy: 78,
+  activePredictions: 12,
+  highSeverityAlerts: 3,
+  portfolioChange: '+4.2%',
+  weeklyPredictions: 24,
+  successRate: '18/24',
+};
+
+// Fullscreen/Expanded Tab Components
+function FullscreenDashboard({ onClose }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] bg-bg-primary overflow-auto"
+    >
+      <div className="min-h-screen">
+        {/* Header */}
+        <div className="sticky top-0 bg-bg-primary/95 backdrop-blur-sm border-b border-gray-800 px-6 py-4 flex items-center justify-between z-10">
+          <div className="flex items-center gap-3">
+            <LayoutDashboard className="w-6 h-6 text-accent-blue" />
+            <h1 className="text-xl font-bold text-white">Dashboard Overview</h1>
+          </div>
+          <button onClick={onClose} className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+            <X className="w-6 h-6 text-text-secondary hover:text-white" />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 space-y-6">
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <div className="flex items-center gap-2 mb-2">
+                <Calendar className="w-4 h-4 text-accent-blue" />
+                <span className="text-xs text-text-secondary">Total Events</span>
+              </div>
+              <p className="text-2xl font-bold text-white">{dashboardStats.totalEvents}</p>
+              <p className="text-xs text-accent-green">+12 from yesterday</p>
+            </div>
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <div className="flex items-center gap-2 mb-2">
+                <BarChart3 className="w-4 h-4 text-accent-green" />
+                <span className="text-xs text-text-secondary">Accuracy</span>
+              </div>
+              <p className="text-2xl font-bold text-accent-green">{dashboardStats.predictionsAccuracy}%</p>
+              <p className="text-xs text-text-secondary">Last 7 days</p>
+            </div>
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <div className="flex items-center gap-2 mb-2">
+                <Target className="w-4 h-4 text-accent-amber" />
+                <span className="text-xs text-text-secondary">Active</span>
+              </div>
+              <p className="text-2xl font-bold text-white">{dashboardStats.activePredictions}</p>
+              <p className="text-xs text-text-secondary">Predictions</p>
+            </div>
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <div className="flex items-center gap-2 mb-2">
+                <AlertTriangle className="w-4 h-4 text-accent-red" />
+                <span className="text-xs text-text-secondary">High Severity</span>
+              </div>
+              <p className="text-2xl font-bold text-accent-red">{dashboardStats.highSeverityAlerts}</p>
+              <p className="text-xs text-text-secondary">Alerts</p>
+            </div>
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <div className="flex items-center gap-2 mb-2">
+                <TrendingUp className="w-4 h-4 text-accent-green" />
+                <span className="text-xs text-text-secondary">Portfolio</span>
+              </div>
+              <p className="text-2xl font-bold text-accent-green">{dashboardStats.portfolioChange}</p>
+              <p className="text-xs text-text-secondary">This week</p>
+            </div>
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <div className="flex items-center gap-2 mb-2">
+                <CheckCircle className="w-4 h-4 text-accent-blue" />
+                <span className="text-xs text-text-secondary">Success Rate</span>
+              </div>
+              <p className="text-2xl font-bold text-white">{dashboardStats.successRate}</p>
+              <p className="text-xs text-text-secondary">This week</p>
+            </div>
+          </div>
+
+          {/* Two Column Layout */}
+          <div className="grid lg:grid-cols-2 gap-6">
+            {/* Recent Activity */}
+            <div className="bg-bg-card rounded-xl border border-gray-800 p-5">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-accent-blue" />
+                Recent Activity
+              </h3>
+              <div className="space-y-3">
+                {[
+                  { title: 'XOM Prediction Validated', type: 'success', time: '15 min ago', detail: '+2.4% return' },
+                  { title: 'Fed Rate Decision Event', type: 'alert', time: '32 min ago', detail: 'HIGH severity' },
+                  { title: 'MSFT Alert Triggered', type: 'warning', time: '1h ago', detail: '-1.2% movement' },
+                  { title: 'New prediction: NVDA', type: 'info', time: '2h ago', detail: 'BULLISH 85%' },
+                  { title: 'BTC target reached', type: 'success', time: '3h ago', detail: '+5.8% return' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center justify-between p-3 bg-bg-primary rounded-lg hover:bg-gray-800 cursor-pointer transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-2 h-2 rounded-full ${
+                        item.type === 'success' ? 'bg-accent-green' :
+                        item.type === 'alert' ? 'bg-accent-red' :
+                        item.type === 'warning' ? 'bg-accent-amber' : 'bg-accent-blue'
+                      }`} />
+                      <div>
+                        <p className="text-sm text-white">{item.title}</p>
+                        <p className="text-xs text-text-secondary">{item.time}</p>
+                      </div>
+                    </div>
+                    <span className={`text-xs px-2 py-1 rounded ${
+                      item.type === 'success' ? 'bg-accent-green/20 text-accent-green' :
+                      item.type === 'alert' ? 'bg-accent-red/20 text-accent-red' :
+                      item.type === 'warning' ? 'bg-accent-amber/20 text-accent-amber' : 'bg-accent-blue/20 text-accent-blue'
+                    }`}>{item.detail}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Active Predictions */}
+            <div className="bg-bg-card rounded-xl border border-gray-800 p-5">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Target className="w-5 h-5 text-accent-amber" />
+                Active Predictions
+              </h3>
+              <div className="space-y-3">
+                {extendedPredictions.filter(p => p.status === 'ACTIVE').map((pred, i) => (
+                  <div key={i} className="p-4 bg-bg-primary rounded-lg border border-gray-700">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-lg font-mono text-accent-blue">{pred.asset}</span>
+                      <span className={`text-sm font-semibold ${pred.prediction === 'BULLISH' ? 'text-accent-green' : 'text-accent-red'}`}>
+                        {pred.prediction === 'BULLISH' ? '↑' : '↓'} {pred.prediction}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-xs">
+                      <div>
+                        <span className="text-text-secondary">Entry</span>
+                        <p className="text-white">{pred.entry}</p>
+                      </div>
+                      <div>
+                        <span className="text-text-secondary">Target</span>
+                        <p className="text-accent-green">{pred.target}</p>
+                      </div>
+                      <div>
+                        <span className="text-text-secondary">P&L</span>
+                        <p className={pred.pnl.startsWith('+') ? 'text-accent-green' : 'text-accent-red'}>{pred.pnl}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-700">
+                      <div className="flex items-center gap-1 text-xs text-text-secondary">
+                        <Clock className="w-3 h-3" />
+                        {pred.timeLeft}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="text-xs text-text-secondary">{pred.confidence}%</span>
+                        <div className="w-16 h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                          <div className="h-full bg-accent-blue rounded-full" style={{ width: `${pred.confidence}%` }} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <button className="p-4 bg-accent-blue/20 text-accent-blue rounded-xl text-left hover:bg-accent-blue/30 transition-colors">
+              <Zap className="w-5 h-5 mb-2" />
+              <span className="font-medium">Create Alert</span>
+            </button>
+            <button className="p-4 bg-bg-card text-white rounded-xl text-left hover:bg-gray-800 transition-colors border border-gray-800">
+              <BarChart3 className="w-5 h-5 mb-2" />
+              <span className="font-medium">View Analytics</span>
+            </button>
+            <button className="p-4 bg-bg-card text-white rounded-xl text-left hover:bg-gray-800 transition-colors border border-gray-800">
+              <Share2 className="w-5 h-5 mb-2" />
+              <span className="font-medium">Export Report</span>
+            </button>
+            <button className="p-4 bg-bg-card text-white rounded-xl text-left hover:bg-gray-800 transition-colors border border-gray-800">
+              <Target className="w-5 h-5 mb-2" />
+              <span className="font-medium">New Prediction</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function FullscreenDiscover({ onClose }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] bg-bg-primary overflow-auto"
+    >
+      <div className="min-h-screen">
+        {/* Header */}
+        <div className="sticky top-0 bg-bg-primary/95 backdrop-blur-sm border-b border-gray-800 px-6 py-4 flex items-center justify-between z-10">
+          <div className="flex items-center gap-3">
+            <Compass className="w-6 h-6 text-accent-blue" />
+            <h1 className="text-xl font-bold text-white">Discover Topics</h1>
+          </div>
+          <button onClick={onClose} className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+            <X className="w-6 h-6 text-text-secondary hover:text-white" />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 space-y-6">
+          {/* Search/Filter Bar */}
+          <div className="flex gap-4 flex-wrap">
+            <input 
+              type="text" 
+              placeholder="Search topics..." 
+              className="flex-1 min-w-64 px-4 py-2 bg-bg-card border border-gray-700 rounded-lg text-white placeholder-text-secondary focus:outline-none focus:border-accent-blue"
+            />
+            <button className="px-4 py-2 bg-bg-card border border-gray-700 rounded-lg text-text-secondary hover:text-white transition-colors flex items-center gap-2">
+              <Filter className="w-4 h-4" />
+              Filters
+            </button>
+          </div>
+
+          {/* Recommended Topics Grid */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-accent-amber" />
+              Recommended for You
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {extendedDiscoverTopics.map((topic, i) => (
+                <div key={i} className="p-5 bg-bg-card rounded-xl border border-gray-800 hover:border-accent-blue/50 transition-colors cursor-pointer">
+                  <div className="flex items-start justify-between mb-3">
+                    <h4 className="text-lg font-medium text-white">{topic.title}</h4>
+                    <span className="text-xs px-2 py-1 bg-accent-blue/20 text-accent-blue rounded">{topic.match}% match</span>
+                  </div>
+                  <p className="text-sm text-text-secondary mb-4">{topic.description}</p>
+                  <div className="flex items-center justify-between text-xs text-text-secondary mb-4">
+                    <span className="flex items-center gap-1">
+                      <User className="w-3 h-3" />
+                      {topic.followers} followers
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Activity className="w-3 h-3" />
+                      {topic.events24h} events/24h
+                    </span>
+                  </div>
+                  <div className="flex gap-2">
+                    <button className="flex-1 px-3 py-2 bg-accent-blue text-white rounded-lg text-sm font-medium hover:bg-accent-blue/80 transition-colors">
+                      + Follow
+                    </button>
+                    <button className="p-2 bg-bg-primary rounded-lg hover:bg-gray-700 transition-colors">
+                      <Bookmark className="w-4 h-4 text-text-secondary" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Categories */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-4">Browse by Category</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+              {['Technology', 'Finance', 'Energy', 'Crypto', 'Politics', 'Healthcare', 'Commodities', 'Trade', 'Environment', 'Employment', 'Real Estate', 'Defense'].map((cat, i) => (
+                <button key={i} className="p-4 bg-bg-card rounded-xl border border-gray-800 text-center hover:border-accent-blue/50 transition-colors">
+                  <Globe className="w-5 h-5 mx-auto mb-2 text-accent-blue" />
+                  <span className="text-sm text-white">{cat}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function FullscreenTrending({ onClose }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] bg-bg-primary overflow-auto"
+    >
+      <div className="min-h-screen">
+        {/* Header */}
+        <div className="sticky top-0 bg-bg-primary/95 backdrop-blur-sm border-b border-gray-800 px-6 py-4 flex items-center justify-between z-10">
+          <div className="flex items-center gap-3">
+            <TrendingUp className="w-6 h-6 text-accent-green" />
+            <h1 className="text-xl font-bold text-white">Trending Topics</h1>
+          </div>
+          <div className="flex items-center gap-3">
+            <select className="px-3 py-2 bg-bg-card border border-gray-700 rounded-lg text-white text-sm">
+              <option>Last 24 hours</option>
+              <option>Last 7 days</option>
+              <option>Last 30 days</option>
+            </select>
+            <button onClick={onClose} className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+              <X className="w-6 h-6 text-text-secondary hover:text-white" />
+            </button>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 space-y-6">
+          {/* Stats Banner */}
+          <div className="grid grid-cols-3 gap-4">
+            <div className="p-4 bg-gradient-to-br from-accent-green/20 to-transparent rounded-xl border border-accent-green/30">
+              <p className="text-2xl font-bold text-accent-green">+18%</p>
+              <p className="text-sm text-text-secondary">Average momentum</p>
+            </div>
+            <div className="p-4 bg-gradient-to-br from-accent-blue/20 to-transparent rounded-xl border border-accent-blue/30">
+              <p className="text-2xl font-bold text-accent-blue">67</p>
+              <p className="text-sm text-text-secondary">Active topics</p>
+            </div>
+            <div className="p-4 bg-gradient-to-br from-accent-amber/20 to-transparent rounded-xl border border-accent-amber/30">
+              <p className="text-2xl font-bold text-accent-amber">12</p>
+              <p className="text-sm text-text-secondary">New today</p>
+            </div>
+          </div>
+
+          {/* Trending Table */}
+          <div className="bg-bg-card rounded-xl border border-gray-800 overflow-hidden">
+            <div className="grid grid-cols-12 gap-4 px-6 py-3 border-b border-gray-800 text-xs text-text-secondary uppercase tracking-wider">
+              <div className="col-span-1">#</div>
+              <div className="col-span-3">Topic</div>
+              <div className="col-span-2">Category</div>
+              <div className="col-span-2">Regions</div>
+              <div className="col-span-1">Events</div>
+              <div className="col-span-1">Severity</div>
+              <div className="col-span-2 text-right">Change</div>
+            </div>
+            {extendedTrendingTopics.map((topic, index) => (
+              <div key={index} className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-gray-800/50 hover:bg-gray-800/50 cursor-pointer transition-colors items-center">
+                <div className="col-span-1">
+                  <span className="text-lg font-bold text-text-secondary">{index + 1}</span>
+                </div>
+                <div className="col-span-3">
+                  <p className="text-white font-medium">{topic.label}</p>
+                  <p className="text-xs text-text-secondary">{topic.description}</p>
+                </div>
+                <div className="col-span-2">
+                  <span className="px-2 py-1 bg-bg-primary rounded text-xs text-text-secondary">{topic.category}</span>
+                </div>
+                <div className="col-span-2 flex gap-1 flex-wrap">
+                  {topic.regions.map((r, i) => (
+                    <span key={i} className="px-1.5 py-0.5 bg-accent-blue/20 text-accent-blue text-xs rounded">{r}</span>
+                  ))}
+                </div>
+                <div className="col-span-1">
+                  <span className="text-white">{topic.events}</span>
+                </div>
+                <div className="col-span-1">
+                  <span className={`px-2 py-1 rounded text-xs ${
+                    topic.severity === 'CRITICAL' ? 'bg-accent-red/20 text-accent-red' :
+                    topic.severity === 'HIGH' ? 'bg-accent-amber/20 text-accent-amber' : 'bg-accent-blue/20 text-accent-blue'
+                  }`}>{topic.severity}</span>
+                </div>
+                <div className="col-span-2 text-right">
+                  <span className={`text-lg font-semibold ${topic.change.startsWith('+') ? 'text-accent-green' : 'text-accent-red'}`}>
+                    {topic.change}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function FullscreenInterests({ onClose }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] bg-bg-primary overflow-auto"
+    >
+      <div className="min-h-screen">
+        {/* Header */}
+        <div className="sticky top-0 bg-bg-primary/95 backdrop-blur-sm border-b border-gray-800 px-6 py-4 flex items-center justify-between z-10">
+          <div className="flex items-center gap-3">
+            <Heart className="w-6 h-6 text-accent-red" />
+            <h1 className="text-xl font-bold text-white">My Interests</h1>
+          </div>
+          <div className="flex items-center gap-3">
+            <button className="px-4 py-2 bg-accent-blue text-white rounded-lg text-sm font-medium hover:bg-accent-blue/80 transition-colors">
+              + Add Interest
+            </button>
+            <button onClick={onClose} className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+              <X className="w-6 h-6 text-text-secondary hover:text-white" />
+            </button>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 space-y-6">
+          {/* Interest Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {extendedInterests.map((interest, i) => (
+              <div key={i} className="p-5 bg-bg-card rounded-xl border border-gray-800">
+                <div className="flex items-center justify-between mb-4">
+                  <h4 className="text-lg font-medium text-white">{interest.tag}</h4>
+                  <div className="flex items-center gap-2">
+                    <button className={`p-2 rounded-lg transition-colors ${interest.notifications ? 'bg-accent-blue/20 text-accent-blue' : 'bg-gray-700 text-text-secondary'}`}>
+                      <Bell className="w-4 h-4" />
+                    </button>
+                    <button className="p-2 rounded-lg bg-gray-700 text-text-secondary hover:text-white transition-colors">
+                      <MoreHorizontal className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+                
+                {/* Weight Bar */}
+                <div className="mb-4">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs text-text-secondary">Interest Weight</span>
+                    <span className="text-xs text-accent-blue">{interest.weight}%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-full bg-accent-blue rounded-full" style={{ width: `${interest.weight}%` }} />
+                  </div>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-700">
+                  <div className="text-center">
+                    <p className="text-lg font-bold text-white">{interest.events}</p>
+                    <p className="text-xs text-text-secondary">Events</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-lg font-bold text-white">{interest.predictions}</p>
+                    <p className="text-xs text-text-secondary">Predictions</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-lg font-bold text-accent-green">{interest.accuracy}%</p>
+                    <p className="text-xs text-text-secondary">Accuracy</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Suggested Interests */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-4">Suggested Interests</h3>
+            <div className="flex flex-wrap gap-3">
+              {['Artificial Intelligence', 'Electric Vehicles', 'Gold', 'Japanese Yen', 'Interest Rates', 'Supply Chain'].map((tag, i) => (
+                <button key={i} className="px-4 py-2 bg-bg-card border border-gray-700 rounded-lg text-text-secondary hover:text-white hover:border-accent-blue/50 transition-colors flex items-center gap-2">
+                  <span>{tag}</span>
+                  <span className="text-accent-blue">+</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function FullscreenPredictions({ onClose }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] bg-bg-primary overflow-auto"
+    >
+      <div className="min-h-screen">
+        {/* Header */}
+        <div className="sticky top-0 bg-bg-primary/95 backdrop-blur-sm border-b border-gray-800 px-6 py-4 flex items-center justify-between z-10">
+          <div className="flex items-center gap-3">
+            <Target className="w-6 h-6 text-accent-blue" />
+            <h1 className="text-xl font-bold text-white">My Predictions</h1>
+          </div>
+          <div className="flex items-center gap-3">
+            <button className="px-4 py-2 bg-accent-blue text-white rounded-lg text-sm font-medium hover:bg-accent-blue/80 transition-colors">
+              + New Prediction
+            </button>
+            <button onClick={onClose} className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+              <X className="w-6 h-6 text-text-secondary hover:text-white" />
+            </button>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 space-y-6">
+          {/* Stats */}
+          <div className="grid grid-cols-4 gap-4">
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <p className="text-2xl font-bold text-white">{extendedPredictions.filter(p => p.status === 'ACTIVE').length}</p>
+              <p className="text-sm text-text-secondary">Active</p>
+            </div>
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <p className="text-2xl font-bold text-accent-amber">{extendedPredictions.filter(p => p.status === 'PENDING').length}</p>
+              <p className="text-sm text-text-secondary">Pending</p>
+            </div>
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <p className="text-2xl font-bold text-accent-green">{extendedPredictions.filter(p => p.accuracy === 'CORRECT').length}</p>
+              <p className="text-sm text-text-secondary">Correct</p>
+            </div>
+            <div className="p-4 bg-bg-card rounded-xl border border-gray-800">
+              <p className="text-2xl font-bold text-accent-red">{extendedPredictions.filter(p => p.accuracy === 'INCORRECT').length}</p>
+              <p className="text-sm text-text-secondary">Incorrect</p>
+            </div>
+          </div>
+
+          {/* Predictions Table */}
+          <div className="bg-bg-card rounded-xl border border-gray-800 overflow-hidden">
+            <div className="grid grid-cols-12 gap-4 px-6 py-3 border-b border-gray-800 text-xs text-text-secondary uppercase tracking-wider">
+              <div className="col-span-2">Asset</div>
+              <div className="col-span-2">Direction</div>
+              <div className="col-span-2">Entry</div>
+              <div className="col-span-2">Target</div>
+              <div className="col-span-1">Confidence</div>
+              <div className="col-span-2">Status</div>
+              <div className="col-span-1 text-right">P&L</div>
+            </div>
+            {extendedPredictions.map((pred, index) => (
+              <div key={index} className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-gray-800/50 hover:bg-gray-800/50 cursor-pointer transition-colors items-center">
+                <div className="col-span-2">
+                  <span className="text-lg font-mono text-accent-blue">{pred.asset}</span>
+                </div>
+                <div className="col-span-2">
+                  <span className={`flex items-center gap-1 font-medium ${pred.prediction === 'BULLISH' ? 'text-accent-green' : 'text-accent-red'}`}>
+                    {pred.prediction === 'BULLISH' ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
+                    {pred.prediction}
+                  </span>
+                </div>
+                <div className="col-span-2">
+                  <span className="text-white">{pred.entry}</span>
+                </div>
+                <div className="col-span-2">
+                  <span className="text-accent-green">{pred.target}</span>
+                </div>
+                <div className="col-span-1">
+                  <div className="flex items-center gap-1">
+                    <div className="w-12 h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                      <div className="h-full bg-accent-blue rounded-full" style={{ width: `${pred.confidence}%` }} />
+                    </div>
+                    <span className="text-xs text-text-secondary">{pred.confidence}%</span>
+                  </div>
+                </div>
+                <div className="col-span-2">
+                  <span className={`px-2 py-1 rounded text-xs ${
+                    pred.status === 'ACTIVE' ? 'bg-accent-green/20 text-accent-green' :
+                    pred.status === 'PENDING' ? 'bg-accent-amber/20 text-accent-amber' :
+                    'bg-accent-blue/20 text-accent-blue'
+                  }`}>
+                    {pred.status}
+                    {pred.timeLeft && <span className="ml-1 opacity-75">• {pred.timeLeft}</span>}
+                  </span>
+                </div>
+                <div className="col-span-1 text-right">
+                  <span className={`text-lg font-semibold ${pred.pnl.startsWith('+') ? 'text-accent-green' : pred.pnl === '0%' ? 'text-text-secondary' : 'text-accent-red'}`}>
+                    {pred.pnl}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 function DashboardTab() {
   return (
@@ -360,9 +990,24 @@ function SettingsTab() {
 
 export default function RightPanel({ isExpanded, setIsExpanded }) {
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
+  };
+
+  // Handle tab click - double-tap on same tab opens fullscreen (except settings)
+  const handleTabClick = (tabId) => {
+    if (activeTab === tabId && tabId !== 'settings') {
+      // Double-tap on same tab - open fullscreen
+      setIsFullscreen(true);
+    } else {
+      setActiveTab(tabId);
+    }
+  };
+
+  const closeFullscreen = () => {
+    setIsFullscreen(false);
   };
 
   const renderTabContent = () => {
@@ -384,80 +1029,117 @@ export default function RightPanel({ isExpanded, setIsExpanded }) {
     }
   };
 
+  const renderFullscreenContent = () => {
+    switch (activeTab) {
+      case 'dashboard':
+        return <FullscreenDashboard onClose={closeFullscreen} />;
+      case 'discover':
+        return <FullscreenDiscover onClose={closeFullscreen} />;
+      case 'trending':
+        return <FullscreenTrending onClose={closeFullscreen} />;
+      case 'interests':
+        return <FullscreenInterests onClose={closeFullscreen} />;
+      case 'predictions':
+        return <FullscreenPredictions onClose={closeFullscreen} />;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="fixed right-0 top-16 bottom-0 z-40 flex">
-      {/* Toggle Button */}
-      <button
-        onClick={toggleExpanded}
-        className="w-10 h-16 bg-bg-card border-l border-t border-b border-gray-800 rounded-l-lg flex items-center justify-center text-text-secondary hover:text-white transition-colors hover:bg-bg-card-alt"
-        aria-label={isExpanded ? "Collapse panel" : "Expand panel"}
-      >
-        {isExpanded ? (
-          <ChevronRight className="w-5 h-5" />
-        ) : (
-          <ChevronLeft className="w-5 h-5" />
-        )}
-      </button>
-
-      {/* Panel */}
+    <>
+      {/* Fullscreen Overlay */}
       <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 320, opacity: 1 }}
-            exit={{ width: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="bg-bg-card-alt border-l border-gray-800 overflow-hidden"
-          >
-            <div className="flex flex-col h-full">
-              {/* Tab Navigation */}
-              <div className="border-b border-gray-800 px-4 py-3">
-                <div className="grid grid-cols-3 gap-1">
-                  {tabs.map((tab) => {
-                    const Icon = tab.icon;
-                    return (
-                      <button
-                        key={tab.id}
-                        onClick={() => setActiveTab(tab.id)}
-                        className={`p-2 rounded-lg transition-colors text-xs flex flex-col items-center gap-1 ${
-                          activeTab === tab.id
-                            ? 'bg-accent-blue/20 text-accent-blue'
-                            : 'text-text-secondary hover:text-white hover:bg-gray-700'
-                        }`}
-                        title={tab.label}
-                      >
-                        <Icon className="w-4 h-4" />
-                        <span className="truncate w-full">{tab.label.split(' ')[0]}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Tab Content */}
-              <div className="flex-1 overflow-y-auto p-4">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {renderTabContent()}
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
-        )}
+        {isFullscreen && renderFullscreenContent()}
       </AnimatePresence>
 
-      {/* Mobile Overlay */}
-      {isExpanded && (
-        <div 
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm lg:hidden"
-          onClick={() => setIsExpanded(false)}
-        />
-      )}
-    </div>
+      <div className="fixed right-0 top-16 bottom-0 z-40 flex">
+        {/* Toggle Button */}
+        <button
+          onClick={toggleExpanded}
+          className="w-10 h-16 bg-bg-card border-l border-t border-b border-gray-800 rounded-l-lg flex items-center justify-center text-text-secondary hover:text-white transition-colors hover:bg-bg-card-alt"
+          aria-label={isExpanded ? "Collapse panel" : "Expand panel"}
+        >
+          {isExpanded ? (
+            <ChevronRight className="w-5 h-5" />
+          ) : (
+            <ChevronLeft className="w-5 h-5" />
+          )}
+        </button>
+
+        {/* Panel */}
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: 320, opacity: 1 }}
+              exit={{ width: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="bg-bg-card-alt border-l border-gray-800 overflow-hidden"
+            >
+              <div className="flex flex-col h-full">
+                {/* Tab Navigation */}
+                <div className="border-b border-gray-800 px-4 py-3">
+                  <div className="grid grid-cols-3 gap-1">
+                    {tabs.map((tab) => {
+                      const Icon = tab.icon;
+                      return (
+                        <button
+                          key={tab.id}
+                          onClick={() => handleTabClick(tab.id)}
+                          className={`p-2 rounded-lg transition-colors text-xs flex flex-col items-center gap-1 ${
+                            activeTab === tab.id
+                              ? 'bg-accent-blue/20 text-accent-blue'
+                              : 'text-text-secondary hover:text-white hover:bg-gray-700'
+                          }`}
+                          title={tab.id !== 'settings' ? `${tab.label} (click again to expand)` : tab.label}
+                        >
+                          <Icon className="w-4 h-4" />
+                          <span className="truncate w-full">{tab.label.split(' ')[0]}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Expand hint for active tab */}
+                {activeTab !== 'settings' && (
+                  <div className="px-4 py-2 border-b border-gray-800/50">
+                    <button 
+                      onClick={() => setIsFullscreen(true)}
+                      className="w-full text-xs text-text-secondary hover:text-accent-blue flex items-center justify-center gap-1 transition-colors"
+                    >
+                      <ArrowUpRight className="w-3 h-3" />
+                      Click tab again or here to expand
+                    </button>
+                  </div>
+                )}
+
+                {/* Tab Content */}
+                <div className="flex-1 overflow-y-auto p-4">
+                  <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {renderTabContent()}
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Mobile Overlay */}
+        {isExpanded && (
+          <div 
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm lg:hidden"
+            onClick={() => setIsExpanded(false)}
+          />
+        )}
+      </div>
+    </>
   );
 }
 
