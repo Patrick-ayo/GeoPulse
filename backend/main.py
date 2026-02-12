@@ -232,6 +232,8 @@ async def analyze_news(request: AnalyzeRequest):
     In production, this would call the LLM.
     For demo, returns a mock analysis.
     """
+    #replace with analysis.py when that gets made - anni
+
     # Mock LLM response (in production, would call OpenAI/Gemini)
     event_id = f"evt_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"
     

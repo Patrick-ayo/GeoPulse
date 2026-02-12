@@ -1,0 +1,3 @@
+http://timesofindia.indiatimes.com/rssfeedstopstories.cms
+http://timesofindia.indiatimes.com/rssfeeds/1898055.cms
+https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml
