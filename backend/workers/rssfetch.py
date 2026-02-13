@@ -39,7 +39,7 @@ def read_rss_feeds(queue):
 
 scheduler = BackgroundScheduler()
 # maybe move this ↓ scheduler to main when it's properly hooked up with multiprocessing
-scheduler.add_job(read_rss_feeds, 'interval', minutes=2)
+# scheduler.add_job(read_rss_feeds, 'interval', minutes=2)
 
 if __name__ == "__main__":
     print("Starting RSS feed reader...")
