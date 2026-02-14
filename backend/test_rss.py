@@ -1,29 +1,18 @@
-### rss test script delete later ###
+import sys
+import os
 
-import multiprocessing
-from workers.rssfetch import read_rss_feeds
-from analysis import analyze_data
+# Add the current directory to sys.path to allow imports from app
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-def start_rss_reader(queue):
-    print("Starting RSS feed reader...")
-    read_rss_feeds(queue)
-
-def start_analysis_worker(queue):
-    print("Starting analysis worker...")
-    analyze_data(queue)
+from app.ingestion.pipeline import IngestionPipeline
 
 if __name__ == "__main__":
-    queue = multiprocessing.Queue()
-
-    rss_process = multiprocessing.Process(target=start_rss_reader, args=(queue,))
-    analysis_process = multiprocessing.Process(target=start_analysis_worker, args=(queue,))
-
-    rss_process.start()
-    analysis_process.start()
-
+    print("Testing Ingestion Pipeline...")
+    pipeline = IngestionPipeline()
     try:
-        rss_process.join()
-        analysis_process.join()
-    except (KeyboardInterrupt, SystemExit):
-        rss_process.terminate()
-        analysis_process.terminate()
+        new_items = pipeline.run()
+        print(f"Successfully ingested {len(new_items)} items.")
+        for item in new_items[:5]:  # Show first 5
+            print(f"- {item.headline} ({item.source})")
+    except Exception as e:
+        print(f"Error running pipeline: {e}")
