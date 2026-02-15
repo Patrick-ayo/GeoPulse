@@ -1,0 +1,58 @@
+[
+  {
+    "success": false,
+    "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+    "category": "Energy/Commodities",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value='The surprise OPEC produc... and consumer spending.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+    "category": "Monetary Policy",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"The Federal Reserve's ag...le boosting the dollar.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+    "category": "Tech/Earnings",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"Record iPhone sales sign...on' market environment.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "EU proposes strict AI regulations targeting big tech companies",
+    "category": "Regulation",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value='Strict EU AI regulations...ion in the medium term.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "China's GDP growth slows to 3.2%, missing expectations",
+    "category": "Economic Data",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"Slower-than-expected GDP...th high China exposure.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+    "category": "Corporate/Safety",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value='The recall imposes subst...broader ADAS/AV market.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+    "category": "Safe Haven/Crisis",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value='A banking crisis signifi...tial downside pressure.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Microsoft announces $10 billion investment in OpenAI",
+    "category": "Tech/M&A",
+    "error": "2 validation errors for Event\naffected_assets.2.reason\n  String should have at most 200 characters [type=string_too_long, input_value='While Google is a leader...lerate its own efforts.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"This significant investm...e AI and cloud sectors.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  }
+]

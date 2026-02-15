@@ -1,122 +1,133 @@
+"""
+Intelligence pipeline for news analysis.
+Uses LLM to analyze news and generate structured market predictions.
+"""
+
+import os
 from datetime import datetime
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any
 
-def analyze_text(headline: str, source: str, timestamp: Optional[datetime] = None) -> Dict[str, Any]:
-    """
-    Analyze news headline and generate mock predictions.
-    In production, this would call an LLM (OpenAI/Gemini).
-    """
-    headline_lower = headline.lower()
-    
-    # Simple keyword-based mock analysis logic moved from main.py
-    if any(word in headline_lower for word in ["oil", "opec", "saudi", "energy"]):
-        macro_effect = "Supply Shock"
-        market_pressure = "INFLATIONARY"
-        severity = "HIGH"
-        affected_assets = [
-            {
-                "ticker": "XOM",
-                "name": "Exxon Mobil",
-                "asset_class": "Equity",
-                "sector": "Energy",
-                "prediction": "BULLISH",
-                "confidence": 0.85,
-                "reason": "Oil price increases benefit energy producers.",
-            }
-        ]
-        logic_chain = [
-            {"type": "event", "text": "Oil news"},
-            {"type": "macro", "text": "Supply Shock"},
-            {"type": "sector", "text": "Energy"},
-            {"type": "asset", "text": "XOM"},
-        ]
-    elif any(word in headline_lower for word in ["fed", "rate", "interest", "monetary"]):
-        macro_effect = "Monetary Policy Shift"
-        market_pressure = "RISK_ON" if "cut" in headline_lower else "DEFENSIVE"
-        severity = "HIGH"
-        affected_assets = [
-            {
-                "ticker": "SPY",
-                "name": "S&P 500 ETF",
-                "asset_class": "Equity",
-                "sector": "Broad Market",
-                "prediction": "BULLISH" if "cut" in headline_lower else "BEARISH",
-                "confidence": 0.80,
-                "reason": "Rate changes affect equity valuations.",
-            }
-        ]
-        logic_chain = [
-            {"type": "event", "text": "Fed announcement"},
-            {"type": "macro", "text": macro_effect},
-            {"type": "sector", "text": "Financials"},
-            {"type": "asset", "text": "SPY"},
-        ]
-    elif any(word in headline_lower for word in ["ai", "regulation", "tech", "microsoft", "google"]):
-        macro_effect = "Regulatory Impact"
-        market_pressure = "DEFENSIVE"
-        severity = "MEDIUM"
-        affected_assets = [
-            {
-                "ticker": "MSFT",
-                "name": "Microsoft",
-                "asset_class": "Equity",
-                "sector": "Technology",
-                "prediction": "BEARISH" if "regulation" in headline_lower else "BULLISH",
-                "confidence": 0.70,
-                "reason": "Tech sector faces regulatory changes.",
-            }
-        ]
-        logic_chain = [
-            {"type": "event", "text": "Tech news"},
-            {"type": "macro", "text": macro_effect},
-            {"type": "sector", "text": "Technology"},
-            {"type": "asset", "text": "MSFT"},
-        ]
-    else:
-        macro_effect = "Market Uncertainty"
-        market_pressure = "RISK_OFF"
-        severity = "LOW"
-        affected_assets = [
-            {
-                "ticker": "GLD",
-                "name": "Gold ETF",
-                "asset_class": "Commodity",
-                "sector": "Precious Metals",
-                "prediction": "BULLISH",
-                "confidence": 0.55,
-                "reason": "Uncertainty drives safe haven demand.",
-            }
-        ]
-        logic_chain = [
-            {"type": "event", "text": "General news"},
-            {"type": "macro", "text": macro_effect},
-            {"type": "sector", "text": "Safe Haven"},
-            {"type": "asset", "text": "GLD"},
-        ]
+from .llm_client import LLMClient, GeminiClient, OpenAIClient, MockLLMClient
+from .prompt_builder import PromptBuilder
 
-    event_id = f"evt_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"
+
+# Global LLM client instance (initialized on first use)
+_llm_client: Optional[LLMClient] = None
+
+
+def get_llm_client() -> LLMClient:
+    """
+    Get or initialize the LLM client.
     
-    return {
-        "event_id": event_id,
-        "headline": headline,
-        "source": source,
-        "timestamp": (timestamp or datetime.utcnow()).isoformat() + "Z",
-        "severity": severity,
-        "event_sentiment": "NEGATIVE" if "cut" not in headline_lower and "positive" not in headline_lower else "POSITIVE",
-        "macro_effect": macro_effect,
-        "prediction_horizon": "SHORT_TERM",
-        "market_pressure": market_pressure,
-        "logic_chain": logic_chain,
-        "affected_assets": affected_assets,
-        "why": f"Analysis based on {macro_effect.lower()} implications.",
-        "meta": {
-            "llm_model": "demo-gpt",
-            "llm_prompt_version": "v1",
-            "confidence_components": {
-                "llm_score": 0.75,
-                "sentiment_strength": 0.6,
-                "historical_similarity": 0.5,
-            },
-            "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity",
-        },
-    }
+    Priority:
+    1. Gemini (if GOOGLE_API_KEY is set)
+    2. OpenAI (if OPENAI_API_KEY is set)
+    3. MockLLMClient (fallback for testing)
+    
+    Returns:
+        Initialized LLM client
+    """
+    global _llm_client
+    
+    if _llm_client is not None:
+        return _llm_client
+    
+    # Try Gemini first
+    if os.getenv("GOOGLE_API_KEY"):
+        try:
+            _llm_client = GeminiClient()
+            print("✓ Using Gemini LLM client")
+            return _llm_client
+        except Exception as e:
+            print(f"⚠ Failed to initialize Gemini client: {e}")
+    
+    # Try OpenAI second
+    if os.getenv("OPENAI_API_KEY"):
+        try:
+            _llm_client = OpenAIClient()
+            print("✓ Using OpenAI LLM client")
+            return _llm_client
+        except Exception as e:
+            print(f"⚠ Failed to initialize OpenAI client: {e}")
+    
+    # Fallback to mock
+    print("⚠ No API keys found. Using MockLLMClient for testing.")
+    _llm_client = MockLLMClient()
+    return _llm_client
+
+
+def analyze_text(
+    headline: str, 
+    source: str, 
+    timestamp: Optional[datetime] = None,
+    additional_text: Optional[str] = None
+) -> Dict[str, Any]:
+    """
+    Analyze news headline using LLM and generate structured predictions.
+    
+    Args:
+        headline: News headline to analyze
+        source: Source of the news (e.g., "Reuters", "Bloomberg")
+        timestamp: Optional timestamp of the news event
+        additional_text: Optional additional news text/body
+        
+    Returns:
+        Dictionary matching the Event model structure
+    """
+    # Get LLM client
+    llm_client = get_llm_client()
+    
+    # Build prompts
+    prompt_builder = PromptBuilder()
+    system_prompt = prompt_builder.get_system_prompt()
+    user_prompt = prompt_builder.build_user_prompt(headline, source, additional_text)
+    json_schema = prompt_builder.get_json_schema()
+    
+    # Generate event analysis
+    try:
+        result = llm_client.generate_event(system_prompt, user_prompt, json_schema)
+        
+        # Ensure headline and source are set correctly
+        result["headline"] = headline
+        result["source"] = source
+        
+        # Ensure timestamp is set
+        if timestamp:
+            result["timestamp"] = timestamp.isoformat() + "Z"
+        elif "timestamp" not in result:
+            result["timestamp"] = datetime.utcnow().isoformat() + "Z"
+        
+        return result
+        
+    except Exception as e:
+        # Fallback to error response if LLM fails
+        print(f"⚠ LLM analysis failed: {e}")
+        return {
+            "event_id": f"evt_error_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}",
+            "headline": headline,
+            "source": source,
+            "timestamp": (timestamp or datetime.utcnow()).isoformat() + "Z",
+            "severity": "LOW",
+            "event_sentiment": "MIXED",
+            "macro_effect": "Analysis Error",
+            "prediction_horizon": "SHORT_TERM",
+            "market_pressure": "RISK_OFF",
+            "logic_chain": [
+                {"type": "event", "text": "Error in analysis"},
+                {"type": "macro", "text": "Unable to determine"},
+                {"type": "sector", "text": "N/A"},
+                {"type": "asset", "text": "N/A"}
+            ],
+            "affected_assets": [],
+            "why": (f"LLM analysis failed: {str(e)}")[:200],
+            "meta": {
+                "llm_model": "error",
+                "llm_prompt_version": "v1",
+                "confidence_components": {
+                    "llm_score": 0.0,
+                    "sentiment_strength": 0.0,
+                    "historical_similarity": 0.0
+                },
+                "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+            }
+        }

@@ -1,0 +1,458 @@
+[
+  {
+    "success": true,
+    "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+    "category": "Energy/Commodities",
+    "event": {
+      "event_id": "evt_mock_20260215_165154",
+      "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+      "source": "Bloomberg",
+      "timestamp": "2026-02-15T16:51:54.054258Z",
+      "severity": "MEDIUM",
+      "event_sentiment": "POSITIVE",
+      "macro_effect": "Mock Macro Effect",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_ON",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Mock event"
+        },
+        {
+          "type": "macro",
+          "text": "Mock macro effect"
+        },
+        {
+          "type": "sector",
+          "text": "Technology"
+        },
+        {
+          "type": "asset",
+          "text": "AAPL"
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Mock reasoning for prediction"
+        }
+      ],
+      "why": "Mock explanation of the overall prediction",
+      "meta": {
+        "llm_model": "mock-gpt",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.75,
+          "sentiment_strength": 0.6,
+          "historical_similarity": 0.5
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+    "category": "Monetary Policy",
+    "event": {
+      "event_id": "evt_mock_20260215_165157",
+      "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+      "source": "Reuters",
+      "timestamp": "2026-02-15T16:51:57.069336Z",
+      "severity": "MEDIUM",
+      "event_sentiment": "POSITIVE",
+      "macro_effect": "Mock Macro Effect",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_ON",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Mock event"
+        },
+        {
+          "type": "macro",
+          "text": "Mock macro effect"
+        },
+        {
+          "type": "sector",
+          "text": "Technology"
+        },
+        {
+          "type": "asset",
+          "text": "AAPL"
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Mock reasoning for prediction"
+        }
+      ],
+      "why": "Mock explanation of the overall prediction",
+      "meta": {
+        "llm_model": "mock-gpt",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.75,
+          "sentiment_strength": 0.6,
+          "historical_similarity": 0.5
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+    "category": "Tech/Earnings",
+    "event": {
+      "event_id": "evt_mock_20260215_165200",
+      "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+      "source": "CNBC",
+      "timestamp": "2026-02-15T16:52:00.080175Z",
+      "severity": "MEDIUM",
+      "event_sentiment": "POSITIVE",
+      "macro_effect": "Mock Macro Effect",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_ON",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Mock event"
+        },
+        {
+          "type": "macro",
+          "text": "Mock macro effect"
+        },
+        {
+          "type": "sector",
+          "text": "Technology"
+        },
+        {
+          "type": "asset",
+          "text": "AAPL"
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Mock reasoning for prediction"
+        }
+      ],
+      "why": "Mock explanation of the overall prediction",
+      "meta": {
+        "llm_model": "mock-gpt",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.75,
+          "sentiment_strength": 0.6,
+          "historical_similarity": 0.5
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "EU proposes strict AI regulations targeting big tech companies",
+    "category": "Regulation",
+    "event": {
+      "event_id": "evt_mock_20260215_165203",
+      "headline": "EU proposes strict AI regulations targeting big tech companies",
+      "source": "Financial Times",
+      "timestamp": "2026-02-15T16:52:03.087741Z",
+      "severity": "MEDIUM",
+      "event_sentiment": "POSITIVE",
+      "macro_effect": "Mock Macro Effect",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_ON",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Mock event"
+        },
+        {
+          "type": "macro",
+          "text": "Mock macro effect"
+        },
+        {
+          "type": "sector",
+          "text": "Technology"
+        },
+        {
+          "type": "asset",
+          "text": "AAPL"
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Mock reasoning for prediction"
+        }
+      ],
+      "why": "Mock explanation of the overall prediction",
+      "meta": {
+        "llm_model": "mock-gpt",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.75,
+          "sentiment_strength": 0.6,
+          "historical_similarity": 0.5
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "China's GDP growth slows to 3.2%, missing expectations",
+    "category": "Economic Data",
+    "event": {
+      "event_id": "evt_mock_20260215_165206",
+      "headline": "China's GDP growth slows to 3.2%, missing expectations",
+      "source": "Wall Street Journal",
+      "timestamp": "2026-02-15T16:52:06.099173Z",
+      "severity": "MEDIUM",
+      "event_sentiment": "POSITIVE",
+      "macro_effect": "Mock Macro Effect",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_ON",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Mock event"
+        },
+        {
+          "type": "macro",
+          "text": "Mock macro effect"
+        },
+        {
+          "type": "sector",
+          "text": "Technology"
+        },
+        {
+          "type": "asset",
+          "text": "AAPL"
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Mock reasoning for prediction"
+        }
+      ],
+      "why": "Mock explanation of the overall prediction",
+      "meta": {
+        "llm_model": "mock-gpt",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.75,
+          "sentiment_strength": 0.6,
+          "historical_similarity": 0.5
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+    "category": "Corporate/Safety",
+    "event": {
+      "event_id": "evt_mock_20260215_165209",
+      "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+      "source": "Reuters",
+      "timestamp": "2026-02-15T16:52:09.106425Z",
+      "severity": "MEDIUM",
+      "event_sentiment": "POSITIVE",
+      "macro_effect": "Mock Macro Effect",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_ON",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Mock event"
+        },
+        {
+          "type": "macro",
+          "text": "Mock macro effect"
+        },
+        {
+          "type": "sector",
+          "text": "Technology"
+        },
+        {
+          "type": "asset",
+          "text": "AAPL"
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Mock reasoning for prediction"
+        }
+      ],
+      "why": "Mock explanation of the overall prediction",
+      "meta": {
+        "llm_model": "mock-gpt",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.75,
+          "sentiment_strength": 0.6,
+          "historical_similarity": 0.5
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+    "category": "Safe Haven/Crisis",
+    "event": {
+      "event_id": "evt_mock_20260215_165212",
+      "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+      "source": "Bloomberg",
+      "timestamp": "2026-02-15T16:52:12.114567Z",
+      "severity": "MEDIUM",
+      "event_sentiment": "POSITIVE",
+      "macro_effect": "Mock Macro Effect",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_ON",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Mock event"
+        },
+        {
+          "type": "macro",
+          "text": "Mock macro effect"
+        },
+        {
+          "type": "sector",
+          "text": "Technology"
+        },
+        {
+          "type": "asset",
+          "text": "AAPL"
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Mock reasoning for prediction"
+        }
+      ],
+      "why": "Mock explanation of the overall prediction",
+      "meta": {
+        "llm_model": "mock-gpt",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.75,
+          "sentiment_strength": 0.6,
+          "historical_similarity": 0.5
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Microsoft announces $10 billion investment in OpenAI",
+    "category": "Tech/M&A",
+    "event": {
+      "event_id": "evt_mock_20260215_165215",
+      "headline": "Microsoft announces $10 billion investment in OpenAI",
+      "source": "TechCrunch",
+      "timestamp": "2026-02-15T16:52:15.126392Z",
+      "severity": "MEDIUM",
+      "event_sentiment": "POSITIVE",
+      "macro_effect": "Mock Macro Effect",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_ON",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Mock event"
+        },
+        {
+          "type": "macro",
+          "text": "Mock macro effect"
+        },
+        {
+          "type": "sector",
+          "text": "Technology"
+        },
+        {
+          "type": "asset",
+          "text": "AAPL"
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Mock reasoning for prediction"
+        }
+      ],
+      "why": "Mock explanation of the overall prediction",
+      "meta": {
+        "llm_model": "mock-gpt",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.75,
+          "sentiment_strength": 0.6,
+          "historical_similarity": 0.5
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  }
+]

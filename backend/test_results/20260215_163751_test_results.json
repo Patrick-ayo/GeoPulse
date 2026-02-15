@@ -1,0 +1,375 @@
+[
+  {
+    "success": true,
+    "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+    "category": "Energy/Commodities",
+    "event": {
+      "event_id": "OPEC-OIL-CUT-20231026-001",
+      "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+      "source": "Bloomberg",
+      "timestamp": "2023-10-26T10:00:00Z",
+      "severity": "HIGH",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Global crude oil supply shock, leading to higher prices and inflationary pressure.",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "INFLATIONARY",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "OPEC+ announces 2 million bpd oil production cut."
+        },
+        {
+          "type": "macro",
+          "text": "Global crude oil supply shock, leading to higher prices and inflationary pressure."
+        },
+        {
+          "type": "sector",
+          "text": "Energy sector (producers benefit), Transportation, Manufacturing, Consumer Discretionary (face higher costs)."
+        },
+        {
+          "type": "asset",
+          "text": "Crude Oil (BULLISH), Oil & Gas E&P (BULLISH), Airlines (BEARISH), Logistics (BEARISH)."
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "CL=F",
+          "name": "WTI Crude Oil Futures",
+          "asset_class": "Commodity",
+          "sector": "Energy",
+          "prediction": "BULLISH",
+          "confidence": 0.95,
+          "reason": "Direct reduction in global supply pushes crude oil prices higher due to tighter market conditions."
+        },
+        {
+          "ticker": "XOM",
+          "name": "ExxonMobil Corp",
+          "asset_class": "Equity",
+          "sector": "Energy",
+          "prediction": "BULLISH",
+          "confidence": 0.9,
+          "reason": "Higher crude oil prices directly boost revenue and profitability for major integrated oil and gas producers like ExxonMobil."
+        },
+        {
+          "ticker": "DAL",
+          "name": "Delta Air Lines Inc",
+          "asset_class": "Equity",
+          "sector": "Industrials (Airlines)",
+          "prediction": "BEARISH",
+          "confidence": 0.85,
+          "reason": "Increased jet fuel costs, a major operating expense, will erode profit margins for airlines, impacting their financial performance negatively."
+        },
+        {
+          "ticker": "FDX",
+          "name": "FedEx Corporation",
+          "asset_class": "Equity",
+          "sector": "Industrials (Logistics)",
+          "prediction": "BEARISH",
+          "confidence": 0.8,
+          "reason": "Rising diesel prices for its extensive fleet will significantly increase operational costs for logistics companies, reducing profitability and margins."
+        }
+      ],
+      "why": "OPEC's surprise 2M bpd cut creates an immediate supply shock, driving crude oil prices up. This will boost energy producers but severely pressure sectors reliant on fuel, like transportation and ma...",
+      "meta": {
+        "llm_model": "llama3-70b-8192",
+        "llm_prompt_version": "1.0",
+        "confidence_components": {
+          "llm_score": 0.9,
+          "sentiment_strength": 0.8,
+          "historical_similarity": 0.85
+        },
+        "confidence_formula": "avg(llm_score, sentiment_strength, historical_similarity)"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+    "category": "Monetary Policy",
+    "event": {
+      "event_id": "FEDRATEHIKE_20240726_001",
+      "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+      "source": "Reuters",
+      "timestamp": "2024-07-26T10:30:00Z",
+      "severity": "HIGH",
+      "event_sentiment": "NEGATIVE",
+      "macro_effect": "Monetary Policy Tightening (higher cost of capital, reduced liquidity, disinflationary pressure)",
+      "prediction_horizon": "MEDIUM_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead."
+        },
+        {
+          "type": "macro",
+          "text": "Monetary Policy Tightening: Higher cost of capital, reduced corporate/consumer borrowing, lower liquidity, disinflationary pressure."
+        },
+        {
+          "type": "sector",
+          "text": "Growth Technology (high reliance on future earnings, debt), Real Estate (mortgage rates, financing costs), Consumer Discretionary (reduced spending), Financials (mixed, NIM vs. loan demand)."
+        },
+        {
+          "type": "asset",
+          "text": "Equity markets (especially growth stocks), Bonds (inverse relationship to rates), Gold (non-yielding asset), US Dollar (attractiveness of yield)."
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "QQQ",
+          "name": "Invesco QQQ Trust (NASDAQ 100)",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BEARISH",
+          "confidence": 0.9,
+          "reason": "Higher discount rates reduce valuation of future earnings for growth stocks; increased borrowing costs for tech companies impact profitability and investment."
+        },
+        {
+          "ticker": "SPG",
+          "name": "Simon Property Group Inc.",
+          "asset_class": "Equity",
+          "sector": "Real Estate",
+          "prediction": "BEARISH",
+          "confidence": 0.85,
+          "reason": "Higher interest rates increase financing costs for real estate developers and property owners, and higher mortgage rates deter potential buyers, reducing property values."
+        },
+        {
+          "ticker": "JPM",
+          "name": "JPMorgan Chase & Co.",
+          "asset_class": "Equity",
+          "sector": "Financials",
+          "prediction": "BULLISH",
+          "confidence": 0.7,
+          "reason": "Banks typically benefit from rising interest rates as their Net Interest Margin (NIM) expands. While loan demand might slow, improved NIM can boost profitability."
+        },
+        {
+          "ticker": "XAU/USD",
+          "name": "Gold",
+          "asset_class": "Commodity",
+          "sector": "Metals & Mining",
+          "prediction": "BEARISH",
+          "confidence": 0.8,
+          "reason": "Higher interest rates increase the opportunity cost of holding non-yielding assets like gold, making interest-bearing alternatives relatively more attractive to investors."
+        },
+        {
+          "ticker": "DXY",
+          "name": "US Dollar Index",
+          "asset_class": "Forex",
+          "sector": "Currency",
+          "prediction": "BULLISH",
+          "confidence": 0.9,
+          "reason": "Higher interest rates make USD-denominated assets more attractive to international investors, increasing demand for the US dollar and strengthening its value."
+        }
+      ],
+      "why": "Central bank tightening drastically increases borrowing costs and reduces liquidity, dampening economic activity and asset valuations, especially for growth and debt-laden sectors, while strengthen...",
+      "meta": {
+        "llm_model": "llama3-70b-8192",
+        "llm_prompt_version": "v1.0",
+        "confidence_components": {
+          "llm_score": 0.95,
+          "sentiment_strength": 0.9,
+          "historical_similarity": 0.88
+        },
+        "confidence_formula": "average(llm_score, sentiment_strength, historical_similarity)"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+    "category": "Tech/Earnings",
+    "event": {
+      "event_id": "APL-IPHONE-SALES-2024-07-25",
+      "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+      "source": "CNBC",
+      "timestamp": "2024-07-25T12:00:00Z",
+      "severity": "HIGH",
+      "event_sentiment": "POSITIVE",
+      "macro_effect": "Strong Consumer Demand & Corporate Earnings in Tech Sector",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_ON",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Apple announces record-breaking iPhone sales"
+        },
+        {
+          "type": "macro",
+          "text": "Indicates robust consumer spending and strong corporate earnings in the technology sector"
+        },
+        {
+          "type": "sector",
+          "text": "Technology, Consumer Electronics, Semiconductor Industry"
+        },
+        {
+          "type": "asset",
+          "text": "Apple (AAPL), Tech ETFs (QQQ), Semiconductor suppliers (AVGO, QCOM)"
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.95,
+          "reason": "Record sales directly boost revenue and profit, reinforcing market confidence and driving further stock appreciation. Strong consumer demand validates product strategy."
+        },
+        {
+          "ticker": "QQQ",
+          "name": "Invesco QQQ Trust",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BULLISH",
+          "confidence": 0.85,
+          "reason": "Apple is a major component of the Nasdaq 100. Its strong performance and positive outlook lift the entire technology sector and related index funds, signaling broader tech strength."
+        },
+        {
+          "ticker": "AVGO",
+          "name": "Broadcom Inc.",
+          "asset_class": "Equity",
+          "sector": "Semiconductor",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "As a key supplier of components for iPhones, increased sales translate directly into higher demand for Broadcom's chips, positively impacting its revenue and earnings outlook."
+        },
+        {
+          "ticker": "QCOM",
+          "name": "Qualcomm Inc.",
+          "asset_class": "Equity",
+          "sector": "Semiconductor",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Qualcomm supplies critical modem and other chips for iPhones. Higher iPhone production volumes will drive increased demand for Qualcomm's products and licensing revenue."
+        }
+      ],
+      "why": "Apple's record iPhone sales signal robust consumer demand and strong tech sector health, driving positive sentiment for Apple, its suppliers, and broader tech indices.",
+      "meta": {
+        "llm_model": "llama3-70b-8192",
+        "llm_prompt_version": "v1.0",
+        "confidence_components": {
+          "llm_score": 0.9,
+          "sentiment_strength": 0.95,
+          "historical_similarity": 0.8
+        },
+        "confidence_formula": "avg(llm_score, sentiment_strength, historical_similarity)"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "EU proposes strict AI regulations targeting big tech companies",
+    "category": "Regulation",
+    "event": {
+      "event_id": "EUAIREG-20240726-001",
+      "headline": "EU proposes strict AI regulations targeting big tech companies",
+      "source": "Financial Times",
+      "timestamp": "2024-07-26T12:00:00Z",
+      "severity": "HIGH",
+      "event_sentiment": "NEGATIVE",
+      "macro_effect": "Regulatory Impact: Increased compliance costs, potential innovation slowdown, and market entry barriers for AI development and deployment.",
+      "prediction_horizon": "MEDIUM_TERM",
+      "market_pressure": "COST_PRESSURE",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "EU proposes strict AI regulations targeting big tech companies."
+        },
+        {
+          "type": "macro",
+          "text": "Regulatory Impact: Increased compliance costs, potential innovation slowdown, and market entry barriers for AI development and deployment."
+        },
+        {
+          "type": "sector",
+          "text": "Technology (specifically AI software, cloud services, and platform providers)."
+        },
+        {
+          "type": "asset",
+          "text": "Big Tech companies heavily invested in AI development and deployment in the EU market."
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet Inc. (Google)",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BEARISH",
+          "confidence": 0.85,
+          "reason": "Increased compliance costs and operational restrictions for AI development and deployment within the EU market for Google's various AI initiatives and products."
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BEARISH",
+          "confidence": 0.8,
+          "reason": "Faces higher regulatory burden for its extensive AI platforms (Azure AI, OpenAI investments) and services offered to EU customers, impacting profitability and innovation pace."
+        },
+        {
+          "ticker": "META",
+          "name": "Meta Platforms Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BEARISH",
+          "confidence": 0.75,
+          "reason": "Strict AI rules could impact data usage, content moderation AI, and metaverse development in the EU, raising operational costs and limiting product features."
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "asset_class": "Equity",
+          "sector": "Technology",
+          "prediction": "BEARISH",
+          "confidence": 0.7,
+          "reason": "AWS AI services and retail AI operations in the EU will face new compliance requirements, potentially increasing costs and slowing feature rollouts."
+        }
+      ],
+      "why": "EU's strict AI regulations will raise compliance costs, limit innovation flexibility, and potentially slow market expansion for major tech companies heavily invested in AI within the European market.",
+      "meta": {
+        "llm_model": "llama3-70b-8192",
+        "llm_prompt_version": "v1.0",
+        "confidence_components": {
+          "llm_score": 0.9,
+          "sentiment_strength": 0.8,
+          "historical_similarity": 0.7
+        },
+        "confidence_formula": "average(llm_score, sentiment_strength, historical_similarity)"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": false,
+    "headline": "China's GDP growth slows to 3.2%, missing expectations",
+    "category": "Economic Data",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err... 'retryDelay': '9s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+    "category": "Corporate/Safety",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err... 'retryDelay': '9s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+    "category": "Safe Haven/Crisis",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err... 'retryDelay': '8s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Microsoft announces $10 billion investment in OpenAI",
+    "category": "Tech/M&A",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err... 'retryDelay': '8s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  }
+]

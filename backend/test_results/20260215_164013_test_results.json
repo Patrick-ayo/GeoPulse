@@ -1,0 +1,144 @@
+[
+  {
+    "success": true,
+    "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+    "category": "Energy/Commodities",
+    "event": {
+      "event_id": "OPEC-OILCUT-2M-20231026",
+      "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+      "source": "Bloomberg",
+      "timestamp": "2023-10-26T12:00:00.000000Z",
+      "severity": "HIGH",
+      "event_sentiment": "NEGATIVE",
+      "macro_effect": "Supply Shock: Significant reduction in global oil supply leading to higher crude oil prices and exacerbated inflation.",
+      "prediction_horizon": "MEDIUM_TERM",
+      "market_pressure": "INFLATIONARY",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "OPEC+ announces surprise oil production cut of 2 million barrels per day."
+        },
+        {
+          "type": "macro",
+          "text": "Global oil supply shock, leading to increased crude oil prices and elevated inflationary pressures across economies."
+        },
+        {
+          "type": "sector",
+          "text": "Energy sector benefits from higher prices. Transportation, manufacturing, and consumer discretionary sectors face increased input costs and reduced consumer spending power. Central banks may maintain hawkish stance."
+        },
+        {
+          "type": "asset",
+          "text": "Crude oil and energy stocks rise; airlines, automotive, and consumer discretionary stocks fall; inflation hedges like gold gain."
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "CL=F",
+          "name": "WTI Crude Oil Futures",
+          "asset_class": "Commodity",
+          "sector": "Energy",
+          "prediction": "BULLISH",
+          "confidence": 0.95,
+          "reason": "Direct supply reduction by OPEC+ significantly tightens global oil markets, leading to higher crude prices due to reduced availability."
+        },
+        {
+          "ticker": "XOM",
+          "name": "Exxon Mobil Corp.",
+          "asset_class": "Equity",
+          "sector": "Energy",
+          "prediction": "BULLISH",
+          "confidence": 0.88,
+          "reason": "As a major integrated oil and gas company, XOM directly benefits from higher crude oil prices, boosting revenue and profit margins."
+        },
+        {
+          "ticker": "DAL",
+          "name": "Delta Air Lines Inc.",
+          "asset_class": "Equity",
+          "sector": "Industrials",
+          "prediction": "BEARISH",
+          "confidence": 0.85,
+          "reason": "Higher jet fuel costs, a major operational expense for airlines, will significantly erode profit margins and negatively impact earnings."
+        },
+        {
+          "ticker": "F",
+          "name": "Ford Motor Co.",
+          "asset_class": "Equity",
+          "sector": "Consumer Discretionary",
+          "prediction": "BEARISH",
+          "confidence": 0.7,
+          "reason": "Increased fuel prices and general inflation reduce consumer disposable income, potentially dampening demand for new vehicles and impacting sales."
+        },
+        {
+          "ticker": "XAUUSD",
+          "name": "Gold Spot",
+          "asset_class": "Commodity",
+          "sector": "Precious Metals",
+          "prediction": "BULLISH",
+          "confidence": 0.75,
+          "reason": "Gold is often seen as a hedge against inflation and economic uncertainty. Rising oil prices fuel inflation, increasing demand for gold as a store of value."
+        }
+      ],
+      "why": "OPEC's significant oil production cut creates a global supply shock, driving crude oil prices up. This fuels inflation, raises business costs (especially for transport), and may curb consumer spend...",
+      "meta": {
+        "llm_model": "GPT-4",
+        "llm_prompt_version": "1.0",
+        "confidence_components": {
+          "llm_score": 0.9,
+          "sentiment_strength": 0.8,
+          "historical_similarity": 0.7
+        },
+        "confidence_formula": "Weighted average of LLM score, sentiment strength, and historical similarity."
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": false,
+    "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+    "category": "Monetary Policy",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '29s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+    "category": "Tech/Earnings",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '22s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "EU proposes strict AI regulations targeting big tech companies",
+    "category": "Regulation",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '15s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "China's GDP growth slows to 3.2%, missing expectations",
+    "category": "Economic Data",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err... 'retryDelay': '8s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+    "category": "Corporate/Safety",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err... 'retryDelay': '1s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+    "category": "Safe Haven/Crisis",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '54s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Microsoft announces $10 billion investment in OpenAI",
+    "category": "Tech/M&A",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '46s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  }
+]

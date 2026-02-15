@@ -1,0 +1,422 @@
+[
+  {
+    "event_id": "test_evt_001",
+    "headline": "Test headline for validation",
+    "source": "Test Source",
+    "timestamp": "2026-02-15T14:30:55.686313Z",
+    "severity": "MEDIUM",
+    "event_sentiment": "POSITIVE",
+    "macro_effect": "Test Effect",
+    "prediction_horizon": "SHORT_TERM",
+    "market_pressure": "RISK_ON",
+    "logic_chain": [
+      {
+        "type": "event",
+        "text": "Test event"
+      },
+      {
+        "type": "macro",
+        "text": "Test macro"
+      },
+      {
+        "type": "sector",
+        "text": "Test sector"
+      },
+      {
+        "type": "asset",
+        "text": "AAPL"
+      }
+    ],
+    "affected_assets": [
+      {
+        "ticker": "AAPL",
+        "name": "Apple Inc.",
+        "asset_class": "Equity",
+        "sector": "Technology",
+        "prediction": "BULLISH",
+        "confidence": 0.75,
+        "reason": "Test reason"
+      }
+    ],
+    "why": "Test explanation",
+    "meta": {
+      "llm_model": "test-model",
+      "llm_prompt_version": "v1",
+      "confidence_components": {
+        "llm_score": 0.75,
+        "sentiment_strength": 0.6,
+        "historical_similarity": 0.5
+      },
+      "confidence_formula": "test_formula"
+    }
+  },
+  {
+    "event_id": "evt_20260207_oilcut",
+    "headline": "Saudi Arabia announces surprise production cut of 1M barrels",
+    "source": "Bloomberg Energy",
+    "timestamp": "2026-02-07T09:30:00Z",
+    "severity": "HIGH",
+    "event_sentiment": "NEGATIVE",
+    "macro_effect": "Supply Shock",
+    "prediction_horizon": "SHORT_TERM",
+    "market_pressure": "INFLATIONARY",
+    "logic_chain": [
+      {
+        "type": "event",
+        "text": "Saudi cut 1M bpd"
+      },
+      {
+        "type": "macro",
+        "text": "Supply Shock"
+      },
+      {
+        "type": "sector",
+        "text": "Energy"
+      },
+      {
+        "type": "asset",
+        "text": "XOM"
+      }
+    ],
+    "affected_assets": [
+      {
+        "ticker": "XOM",
+        "name": "Exxon Mobil",
+        "asset_class": "Equity",
+        "sector": "Energy",
+        "prediction": "BULLISH",
+        "confidence": 0.92,
+        "reason": "Direct beneficiary of higher crude prices."
+      },
+      {
+        "ticker": "DAL",
+        "name": "Delta Airlines",
+        "asset_class": "Equity",
+        "sector": "Transportation",
+        "prediction": "BEARISH",
+        "confidence": 0.85,
+        "reason": "Jet fuel cost pressure."
+      },
+      {
+        "ticker": "BTC",
+        "name": "Bitcoin",
+        "asset_class": "Crypto",
+        "sector": "Digital Assets",
+        "prediction": "BULLISH",
+        "confidence": 0.68,
+        "reason": "Inflation hedge narrative strengthens."
+      }
+    ],
+    "why": "Less supply \u00e2\u2020\u2019 crude up \u00e2\u2020\u2019 oil majors benefit, airlines hurt.",
+    "meta": {
+      "llm_model": "demo-gpt",
+      "llm_prompt_version": "v1",
+      "confidence_components": {
+        "llm_score": 0.95,
+        "sentiment_strength": 0.7,
+        "historical_similarity": 0.6
+      },
+      "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+    }
+  },
+  {
+    "event_id": "evt_20260207_ai_reg",
+    "headline": "EU passes strict AI regulation bill restricting generative models",
+    "source": "TechCrunch",
+    "timestamp": "2026-02-07T10:15:00Z",
+    "severity": "MEDIUM",
+    "event_sentiment": "NEGATIVE",
+    "macro_effect": "Regulatory Headwind",
+    "prediction_horizon": "MEDIUM_TERM",
+    "market_pressure": "DEFENSIVE",
+    "logic_chain": [
+      {
+        "type": "event",
+        "text": "EU AI bill"
+      },
+      {
+        "type": "macro",
+        "text": "Regulatory Headwind"
+      },
+      {
+        "type": "sector",
+        "text": "Technology"
+      },
+      {
+        "type": "asset",
+        "text": "MSFT"
+      }
+    ],
+    "affected_assets": [
+      {
+        "ticker": "MSFT",
+        "name": "Microsoft",
+        "asset_class": "Equity",
+        "sector": "Technology",
+        "prediction": "BEARISH",
+        "confidence": 0.65,
+        "reason": "Heightened compliance costs in EU markets."
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "Alphabet",
+        "asset_class": "Equity",
+        "sector": "Technology",
+        "prediction": "BEARISH",
+        "confidence": 0.62,
+        "reason": "AI product restrictions limit revenue growth."
+      }
+    ],
+    "why": "Regulatory compliance increases costs; margins pressured.",
+    "meta": {
+      "llm_model": "demo-gpt",
+      "llm_prompt_version": "v1",
+      "confidence_components": {
+        "llm_score": 0.65,
+        "sentiment_strength": 0.4,
+        "historical_similarity": 0.5
+      },
+      "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+    }
+  },
+  {
+    "event_id": "evt_20260208_fed",
+    "headline": "Federal Reserve signals potential rate cut in March meeting",
+    "source": "Reuters",
+    "timestamp": "2026-02-08T14:00:00Z",
+    "severity": "HIGH",
+    "event_sentiment": "POSITIVE",
+    "macro_effect": "Monetary Easing",
+    "prediction_horizon": "MEDIUM_TERM",
+    "market_pressure": "RISK_ON",
+    "logic_chain": [
+      {
+        "type": "event",
+        "text": "Fed rate cut signal"
+      },
+      {
+        "type": "macro",
+        "text": "Monetary Easing"
+      },
+      {
+        "type": "sector",
+        "text": "Financials"
+      },
+      {
+        "type": "asset",
+        "text": "SPY"
+      }
+    ],
+    "affected_assets": [
+      {
+        "ticker": "SPY",
+        "name": "S&P 500 ETF",
+        "asset_class": "Equity",
+        "sector": "Broad Market",
+        "prediction": "BULLISH",
+        "confidence": 0.88,
+        "reason": "Lower rates boost equity valuations."
+      },
+      {
+        "ticker": "GLD",
+        "name": "Gold ETF",
+        "asset_class": "Commodity",
+        "sector": "Precious Metals",
+        "prediction": "BULLISH",
+        "confidence": 0.75,
+        "reason": "Lower rates reduce opportunity cost of gold."
+      }
+    ],
+    "why": "Rate cuts stimulate risk appetite and boost asset prices.",
+    "meta": {
+      "llm_model": "demo-gpt",
+      "llm_prompt_version": "v1",
+      "confidence_components": {
+        "llm_score": 0.9,
+        "sentiment_strength": 0.8,
+        "historical_similarity": 0.7
+      },
+      "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+    }
+  },
+  {
+    "event_id": "evt_20260209_china",
+    "headline": "China announces $500B infrastructure stimulus package",
+    "source": "Financial Times",
+    "timestamp": "2026-02-09T08:45:00Z",
+    "severity": "HIGH",
+    "event_sentiment": "POSITIVE",
+    "macro_effect": "Fiscal Stimulus",
+    "prediction_horizon": "MEDIUM_TERM",
+    "market_pressure": "RISK_ON",
+    "logic_chain": [
+      {
+        "type": "event",
+        "text": "China $500B stimulus"
+      },
+      {
+        "type": "macro",
+        "text": "Fiscal Stimulus"
+      },
+      {
+        "type": "sector",
+        "text": "Materials"
+      },
+      {
+        "type": "asset",
+        "text": "FCX"
+      }
+    ],
+    "affected_assets": [
+      {
+        "ticker": "FCX",
+        "name": "Freeport-McMoRan",
+        "asset_class": "Equity",
+        "sector": "Materials",
+        "prediction": "BULLISH",
+        "confidence": 0.82,
+        "reason": "Infrastructure spending drives copper demand."
+      },
+      {
+        "ticker": "CAT",
+        "name": "Caterpillar",
+        "asset_class": "Equity",
+        "sector": "Industrials",
+        "prediction": "BULLISH",
+        "confidence": 0.78,
+        "reason": "Heavy equipment demand surge expected."
+      }
+    ],
+    "why": "China stimulus \u00e2\u2020\u2019 infrastructure growth \u00e2\u2020\u2019 materials demand up.",
+    "meta": {
+      "llm_model": "demo-gpt",
+      "llm_prompt_version": "v1",
+      "confidence_components": {
+        "llm_score": 0.85,
+        "sentiment_strength": 0.75,
+        "historical_similarity": 0.65
+      },
+      "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+    }
+  },
+  {
+    "event_id": "evt_20260210_crypto",
+    "headline": "SEC approves first Ethereum spot ETF applications",
+    "source": "CoinDesk",
+    "timestamp": "2026-02-10T16:30:00Z",
+    "severity": "HIGH",
+    "event_sentiment": "POSITIVE",
+    "macro_effect": "Regulatory Tailwind",
+    "prediction_horizon": "SHORT_TERM",
+    "market_pressure": "RISK_ON",
+    "logic_chain": [
+      {
+        "type": "event",
+        "text": "SEC ETH ETF approval"
+      },
+      {
+        "type": "macro",
+        "text": "Regulatory Tailwind"
+      },
+      {
+        "type": "sector",
+        "text": "Crypto"
+      },
+      {
+        "type": "asset",
+        "text": "ETH"
+      }
+    ],
+    "affected_assets": [
+      {
+        "ticker": "ETH",
+        "name": "Ethereum",
+        "asset_class": "Crypto",
+        "sector": "Digital Assets",
+        "prediction": "BULLISH",
+        "confidence": 0.94,
+        "reason": "Direct beneficiary of institutional inflows."
+      },
+      {
+        "ticker": "COIN",
+        "name": "Coinbase",
+        "asset_class": "Equity",
+        "sector": "Fintech",
+        "prediction": "BULLISH",
+        "confidence": 0.86,
+        "reason": "Increased trading volume and custody demand."
+      }
+    ],
+    "why": "ETF approval unlocks institutional capital into Ethereum.",
+    "meta": {
+      "llm_model": "demo-gpt",
+      "llm_prompt_version": "v1",
+      "confidence_components": {
+        "llm_score": 0.92,
+        "sentiment_strength": 0.9,
+        "historical_similarity": 0.8
+      },
+      "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+    }
+  },
+  {
+    "event_id": "evt_20260211_tariff",
+    "headline": "US imposes 25% tariffs on European auto imports",
+    "source": "Wall Street Journal",
+    "timestamp": "2026-02-11T11:00:00Z",
+    "severity": "HIGH",
+    "event_sentiment": "NEGATIVE",
+    "macro_effect": "Trade War",
+    "prediction_horizon": "MEDIUM_TERM",
+    "market_pressure": "DEFENSIVE",
+    "logic_chain": [
+      {
+        "type": "event",
+        "text": "US 25% auto tariffs"
+      },
+      {
+        "type": "macro",
+        "text": "Trade War"
+      },
+      {
+        "type": "sector",
+        "text": "Automotive"
+      },
+      {
+        "type": "asset",
+        "text": "VWAGY"
+      }
+    ],
+    "affected_assets": [
+      {
+        "ticker": "VWAGY",
+        "name": "Volkswagen",
+        "asset_class": "Equity",
+        "sector": "Automotive",
+        "prediction": "BEARISH",
+        "confidence": 0.88,
+        "reason": "Higher tariffs cut US market competitiveness."
+      },
+      {
+        "ticker": "F",
+        "name": "Ford",
+        "asset_class": "Equity",
+        "sector": "Automotive",
+        "prediction": "BULLISH",
+        "confidence": 0.72,
+        "reason": "Domestic automakers gain market share."
+      }
+    ],
+    "why": "Tariffs hurt European automakers, benefit US rivals.",
+    "meta": {
+      "llm_model": "demo-gpt",
+      "llm_prompt_version": "v1",
+      "confidence_components": {
+        "llm_score": 0.82,
+        "sentiment_strength": 0.75,
+        "historical_similarity": 0.7
+      },
+      "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+    }
+  }
+]

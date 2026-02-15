@@ -1,0 +1,386 @@
+[
+  {
+    "success": false,
+    "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+    "category": "Energy/Commodities",
+    "event": {
+      "event_id": "evt_error_20260215_164717",
+      "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+      "source": "Bloomberg",
+      "timestamp": "2026-02-15T16:47:17.552356Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "error": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+    "validation": "fallback_error"
+  },
+  {
+    "success": false,
+    "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+    "category": "Monetary Policy",
+    "event": {
+      "event_id": "evt_error_20260215_164727",
+      "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+      "source": "Reuters",
+      "timestamp": "2026-02-15T16:47:27.683086Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "error": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+    "validation": "fallback_error"
+  },
+  {
+    "success": false,
+    "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+    "category": "Tech/Earnings",
+    "event": {
+      "event_id": "evt_error_20260215_164737",
+      "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+      "source": "CNBC",
+      "timestamp": "2026-02-15T16:47:37.783430Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "error": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+    "validation": "fallback_error"
+  },
+  {
+    "success": false,
+    "headline": "EU proposes strict AI regulations targeting big tech companies",
+    "category": "Regulation",
+    "event": {
+      "event_id": "evt_error_20260215_164747",
+      "headline": "EU proposes strict AI regulations targeting big tech companies",
+      "source": "Financial Times",
+      "timestamp": "2026-02-15T16:47:47.914058Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "error": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+    "validation": "fallback_error"
+  },
+  {
+    "success": false,
+    "headline": "China's GDP growth slows to 3.2%, missing expectations",
+    "category": "Economic Data",
+    "event": {
+      "event_id": "evt_error_20260215_164758",
+      "headline": "China's GDP growth slows to 3.2%, missing expectations",
+      "source": "Wall Street Journal",
+      "timestamp": "2026-02-15T16:47:58.131393Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "error": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+    "validation": "fallback_error"
+  },
+  {
+    "success": false,
+    "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+    "category": "Corporate/Safety",
+    "event": {
+      "event_id": "evt_error_20260215_164808",
+      "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+      "source": "Reuters",
+      "timestamp": "2026-02-15T16:48:08.228386Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "error": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+    "validation": "fallback_error"
+  },
+  {
+    "success": false,
+    "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+    "category": "Safe Haven/Crisis",
+    "event": {
+      "event_id": "evt_error_20260215_164818",
+      "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+      "source": "Bloomberg",
+      "timestamp": "2026-02-15T16:48:18.361476Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "error": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+    "validation": "fallback_error"
+  },
+  {
+    "success": false,
+    "headline": "Microsoft announces $10 billion investment in OpenAI",
+    "category": "Tech/M&A",
+    "event": {
+      "event_id": "evt_error_20260215_164828",
+      "headline": "Microsoft announces $10 billion investment in OpenAI",
+      "source": "TechCrunch",
+      "timestamp": "2026-02-15T16:48:28.468419Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "error": "LLM analysis failed: Error generating event with Gemini: Rate limit exceeded after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check",
+    "validation": "fallback_error"
+  }
+]

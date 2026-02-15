@@ -137,18 +137,107 @@ async def get_price(
 async def analyze_news(request: AnalyzeRequest):
     """
     Analyze news and generate predictions.
+    Supports full article analysis via the 'text' field.
     """
-    # Use Intelligence Layer
-    event = analyze_text(
-        request.headline, 
-        request.source, 
-        request.timestamp
-    )
+    try:
+        # Use Intelligence Layer with optional additional_text
+        event = analyze_text(
+            headline=request.headline, 
+            source=request.source, 
+            timestamp=request.timestamp,
+            additional_text=request.text  # Pass full article text if provided
+        )
+        
+        # Add to store with validation
+        repository.add_event(event, validate=True)
+        
+        return {"status": "success", "data": event}
+        
+    except Exception as e:
+        # Handle LLM failures gracefully
+        raise HTTPException(
+            status_code=500, 
+            detail=f"Analysis failed: {str(e)}"
+        )
+
+
+@router.post("/api/analyze/batch")
+async def analyze_news_batch(requests: list[AnalyzeRequest]):
+    """
+    Analyze multiple news headlines in batch.
+    Maximum 10 headlines per request.
+    """
+    if len(requests) > 10:
+        raise HTTPException(
+            status_code=400,
+            detail="Maximum 10 headlines per batch request"
+        )
     
-    # Add to store
-    repository.add_event(event)
+    results = []
+    errors = []
     
-    return {"status": "success", "data": event}
+    for idx, request in enumerate(requests):
+        try:
+            # Use Intelligence Layer
+            event = analyze_text(
+                headline=request.headline,
+                source=request.source,
+                timestamp=request.timestamp,
+                additional_text=request.text
+            )
+            
+            # Add to store with validation
+            repository.add_event(event, validate=True)
+            results.append(event)
+            
+        except Exception as e:
+            errors.append({
+                "index": idx,
+                "headline": request.headline,
+                "error": str(e)
+            })
+    
+    return {
+        "status": "success" if not errors else "partial",
+        "data": results,
+        "errors": errors if errors else None,
+        "summary": {
+            "total": len(requests),
+            "successful": len(results),
+            "failed": len(errors)
+        }
+    }
+
+
+@router.get("/api/llm/status")
+async def get_llm_status():
+    """
+    Get the current LLM client status.
+    Shows which LLM provider is active and available.
+    """
+    from app.intelligence.pipeline import get_llm_client
+    
+    llm_client = get_llm_client()
+    client_type = type(llm_client).__name__
+    
+    # Check API key availability
+    import os
+    has_google_key = bool(os.getenv("GOOGLE_API_KEY"))
+    has_openai_key = bool(os.getenv("OPENAI_API_KEY"))
+    
+    return {
+        "status": "success",
+        "data": {
+            "active_client": client_type,
+            "is_mock": client_type == "MockLLMClient",
+            "available_providers": {
+                "gemini": has_google_key,
+                "openai": has_openai_key,
+                "mock": True
+            },
+            "recommendation": "Set GOOGLE_API_KEY or OPENAI_API_KEY for real LLM analysis" if client_type == "MockLLMClient" else None
+        }
+    }
 
 
 @router.get("/api/health")
