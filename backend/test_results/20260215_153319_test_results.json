@@ -1,0 +1,378 @@
+[
+  {
+    "success": true,
+    "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+    "category": "Energy/Commodities",
+    "event": {
+      "event_id": "evt_error_20260215_153319",
+      "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+      "source": "Bloomberg",
+      "timestamp": "2026-02-15T15:33:19.976654Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: 'GeminiClient' object has no attribute 'model'",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+    "category": "Monetary Policy",
+    "event": {
+      "event_id": "evt_error_20260215_153319",
+      "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+      "source": "Reuters",
+      "timestamp": "2026-02-15T15:33:19.980213Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: 'GeminiClient' object has no attribute 'model'",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+    "category": "Tech/Earnings",
+    "event": {
+      "event_id": "evt_error_20260215_153319",
+      "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+      "source": "CNBC",
+      "timestamp": "2026-02-15T15:33:19.982200Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: 'GeminiClient' object has no attribute 'model'",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "EU proposes strict AI regulations targeting big tech companies",
+    "category": "Regulation",
+    "event": {
+      "event_id": "evt_error_20260215_153319",
+      "headline": "EU proposes strict AI regulations targeting big tech companies",
+      "source": "Financial Times",
+      "timestamp": "2026-02-15T15:33:19.984238Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: 'GeminiClient' object has no attribute 'model'",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "China's GDP growth slows to 3.2%, missing expectations",
+    "category": "Economic Data",
+    "event": {
+      "event_id": "evt_error_20260215_153319",
+      "headline": "China's GDP growth slows to 3.2%, missing expectations",
+      "source": "Wall Street Journal",
+      "timestamp": "2026-02-15T15:33:19.985751Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: 'GeminiClient' object has no attribute 'model'",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+    "category": "Corporate/Safety",
+    "event": {
+      "event_id": "evt_error_20260215_153319",
+      "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+      "source": "Reuters",
+      "timestamp": "2026-02-15T15:33:19.986318Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: 'GeminiClient' object has no attribute 'model'",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+    "category": "Safe Haven/Crisis",
+    "event": {
+      "event_id": "evt_error_20260215_153319",
+      "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+      "source": "Bloomberg",
+      "timestamp": "2026-02-15T15:33:19.988322Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: 'GeminiClient' object has no attribute 'model'",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": true,
+    "headline": "Microsoft announces $10 billion investment in OpenAI",
+    "category": "Tech/M&A",
+    "event": {
+      "event_id": "evt_error_20260215_153319",
+      "headline": "Microsoft announces $10 billion investment in OpenAI",
+      "source": "TechCrunch",
+      "timestamp": "2026-02-15T15:33:19.989322Z",
+      "severity": "LOW",
+      "event_sentiment": "MIXED",
+      "macro_effect": "Analysis Error",
+      "prediction_horizon": "SHORT_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "Error in analysis"
+        },
+        {
+          "type": "macro",
+          "text": "Unable to determine"
+        },
+        {
+          "type": "sector",
+          "text": "N/A"
+        },
+        {
+          "type": "asset",
+          "text": "N/A"
+        }
+      ],
+      "affected_assets": [],
+      "why": "LLM analysis failed: Error generating event with Gemini: 'GeminiClient' object has no attribute 'model'",
+      "meta": {
+        "llm_model": "error",
+        "llm_prompt_version": "v1",
+        "confidence_components": {
+          "llm_score": 0.0,
+          "sentiment_strength": 0.0,
+          "historical_similarity": 0.0
+        },
+        "confidence_formula": "0.4*llm_score+0.3*sentiment_strength+0.3*historical_similarity"
+      }
+    },
+    "validation": "passed"
+  }
+]

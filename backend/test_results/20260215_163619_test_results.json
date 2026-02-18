@@ -1,0 +1,153 @@
+[
+  {
+    "success": false,
+    "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+    "category": "Energy/Commodities",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value='The significant OPEC pro...ry policy expectations.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+    "category": "Monetary Policy",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value='The aggressive Fed rate ...nd boosting the dollar.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+    "category": "Tech/Earnings",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value='Record iPhone sales indi...-on market environment.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "EU proposes strict AI regulations targeting big tech companies",
+    "category": "Regulation",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value='Strict EU AI regulations... major European market.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": true,
+    "headline": "China's GDP growth slows to 3.2%, missing expectations",
+    "category": "Economic Data",
+    "event": {
+      "event_id": "CHN-GDP-20240726-001",
+      "headline": "China's GDP growth slows to 3.2%, missing expectations",
+      "source": "Wall Street Journal",
+      "timestamp": "2024-07-26T12:00:00Z",
+      "severity": "HIGH",
+      "event_sentiment": "NEGATIVE",
+      "macro_effect": "Weaker Chinese economic activity leading to a global demand shock and reduced commodity consumption.",
+      "prediction_horizon": "MEDIUM_TERM",
+      "market_pressure": "RISK_OFF",
+      "logic_chain": [
+        {
+          "type": "event",
+          "text": "China's GDP growth slows to 3.2%, missing expectations"
+        },
+        {
+          "type": "macro",
+          "text": "Signifies weakening domestic demand in China and potential for broader global economic slowdown, impacting demand for commodities and consumer goods."
+        },
+        {
+          "type": "sector",
+          "text": "Global Commodities (Industrial Metals, Energy), Luxury Goods, Consumer Discretionary, Export-oriented industries to China, Emerging Markets."
+        },
+        {
+          "type": "asset",
+          "text": "Copper, Crude Oil, Luxury Brands (e.g., LVMH), Major Mining Companies (e.g., BHP), Australian Dollar (AUD/USD), Chinese Tech/Consumer Equities (e.g., Tencent)."
+        }
+      ],
+      "affected_assets": [
+        {
+          "ticker": "HG=F",
+          "name": "Copper Futures",
+          "asset_class": "Commodity",
+          "sector": "Metals & Mining",
+          "prediction": "BEARISH",
+          "confidence": 0.9,
+          "reason": "China is the largest consumer of industrial metals; slower growth directly reduces demand for copper in construction and manufacturing."
+        },
+        {
+          "ticker": "CL=F",
+          "name": "Crude Oil Futures",
+          "asset_class": "Commodity",
+          "sector": "Energy",
+          "prediction": "BEARISH",
+          "confidence": 0.85,
+          "reason": "China is a major oil importer; weakened economic activity implies lower energy consumption and reduced demand for crude oil."
+        },
+        {
+          "ticker": "LVMUY",
+          "name": "LVMH Mo\u00ebt Hennessy Louis Vuitton SE",
+          "asset_class": "Equity",
+          "sector": "Consumer Discretionary",
+          "prediction": "BEARISH",
+          "confidence": 0.8,
+          "reason": "Chinese consumers are a critical market for luxury goods; slower GDP growth suggests reduced discretionary spending and weaker sales."
+        },
+        {
+          "ticker": "BHP",
+          "name": "BHP Group Ltd.",
+          "asset_class": "Equity",
+          "sector": "Metals & Mining",
+          "prediction": "BEARISH",
+          "confidence": 0.85,
+          "reason": "As a major global miner, BHP's revenues are heavily tied to commodity prices, especially iron ore and copper, which are sensitive to Chinese demand."
+        },
+        {
+          "ticker": "AUD/USD",
+          "name": "Australian Dollar / US Dollar",
+          "asset_class": "Forex",
+          "sector": "N/A",
+          "prediction": "BEARISH",
+          "confidence": 0.75,
+          "reason": "The AUD is often a proxy for Chinese economic health due to Australia's significant commodity exports to China. Weaker China GDP weighs on AUD."
+        },
+        {
+          "ticker": "0700.HK",
+          "name": "Tencent Holdings Ltd.",
+          "asset_class": "Equity",
+          "sector": "Communication Services",
+          "prediction": "BEARISH",
+          "confidence": 0.7,
+          "reason": "As a leading Chinese tech and consumer company, Tencent's performance is sensitive to domestic economic growth and consumer sentiment."
+        }
+      ],
+      "why": "Slower-than-expected GDP growth in China signals weakening domestic demand and potential ripple effects on global trade and commodity markets, leading to a risk-off sentiment.",
+      "meta": {
+        "llm_model": "llama3-70b-8192",
+        "llm_prompt_version": "1.0",
+        "confidence_components": {
+          "llm_score": 0.9,
+          "sentiment_strength": 0.85,
+          "historical_similarity": 0.8
+        },
+        "confidence_formula": "Weighted average of LLM score, sentiment strength, and historical similarity."
+      }
+    },
+    "validation": "passed"
+  },
+  {
+    "success": false,
+    "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+    "category": "Corporate/Safety",
+    "error": "2 validation errors for Event\naffected_assets.1.reason\n  String should have at most 200 characters [type=string_too_long, input_value=\"While not directly invol...y differs from Tesla's.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value='The recall of 2 million ...gy across the industry.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+    "category": "Safe Haven/Crisis",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"The ongoing banking cris... broader equity market.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Microsoft announces $10 billion investment in OpenAI",
+    "category": "Tech/M&A",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"Microsoft's substantial ...tion among tech giants.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  }
+]

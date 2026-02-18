@@ -1,0 +1,58 @@
+[
+  {
+    "success": false,
+    "headline": "OPEC announces surprise oil production cut of 2 million barrels per day",
+    "category": "Energy/Commodities",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '42s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Federal Reserve raises interest rates by 75 basis points, signals more hikes ahead",
+    "category": "Monetary Policy",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '30s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Apple announces record-breaking iPhone sales, stock surges 8%",
+    "category": "Tech/Earnings",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '20s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "EU proposes strict AI regulations targeting big tech companies",
+    "category": "Regulation",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '10s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "China's GDP growth slows to 3.2%, missing expectations",
+    "category": "Economic Data",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '59s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns",
+    "category": "Corporate/Safety",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '49s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Gold prices hit record high as investors seek safe haven amid banking crisis",
+    "category": "Safe Haven/Crisis",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '39s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  },
+  {
+    "success": false,
+    "headline": "Microsoft announces $10 billion investment in OpenAI",
+    "category": "Tech/M&A",
+    "error": "1 validation error for Event\nwhy\n  String should have at most 200 characters [type=string_too_long, input_value=\"LLM analysis failed: Err...'retryDelay': '29s'}]}}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long",
+    "validation": "failed"
+  }
+]
